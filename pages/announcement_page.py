@@ -1,0 +1,10 @@
+class AnnouncementPage:
+    submit_name = "//input[@class='input_inputStandart__JweLZ spanGlobal' and @placeholder='Название']"
+    price = "//input[@class='input_inputStandart__JweLZ spanGlobal' and @placeholder='Стоимость']"
+    description = "//textarea[@class='textarea_inputStandart__IoNxq spanGlobal']"
+    dropdown_city = "//input[@name='city']/../button"
+    dropdown_city_ekb = "//button[@class='dropDownMenu_btn__o8ARs dropDownMenu_noDefault__wSKsP']/span[text()='Екатеринбург']"
+    dropdown_category = "//input[@name='category']/../button"
+    dropdown_category_hobby = "//button[@class='dropDownMenu_btn__o8ARs dropDownMenu_noDefault__wSKsP']/span[text()='Хобби']"
+    radio_button_used = "//label[text()='Б/У']/../div"
+    publish_button = "//button[text()='Опубликовать']"
