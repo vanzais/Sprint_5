@@ -2,13 +2,14 @@ import pytest
 import random
 import string
 from selenium import webdriver
+import config
 
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.implicitly_wait(5)
-    driver.get('https://qa-desk.stand.praktikum-services.ru/')
+    driver.get(config.host)
     yield driver
     driver.quit()
 

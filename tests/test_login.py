@@ -1,8 +1,10 @@
 from selenium.webdriver.common.by import By
-from pages import *
+
+import config
+from locators import *
 from selenium.webdriver.remote.webdriver import WebDriver
 
 def test_login_user(driver: WebDriver):
-    MainPage.login(driver, 'testusernewest@mail.ru', 'temporarypassword')
+    MainPage.login(driver, config.email, config.password)
     assert driver.find_element(By.XPATH, MainPage.user_profile_pic).is_displayed() == True
     assert driver.find_element(By.XPATH, MainPage.user_profile_name).text == 'User.'

@@ -4,14 +4,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from pages import *
+import config
+from locators import *
 
 def test_announcement_not_authorized(driver: WebDriver):
     driver.find_element(By.XPATH, MainPage.submit_announcement).click()
     assert driver.find_element(By.XPATH, MainPagePostAnnouncementPopup.authorization_form).is_displayed() == True
 
 def test_announcement_authorized(driver: WebDriver):
-    MainPage.login(driver, 'testusernewest@mail.ru', 'temporarypassword')
+    MainPage.login(driver, config.email, config.password)
     retry = 10
     while retry > 0:
         try:
